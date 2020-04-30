@@ -17,7 +17,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>liste des patients</h1>
+    <h1>Fiche du patient</h1>
     <a href="liste-patient.php"> revenir à la liste des patients</a>
     <?php foreach($patients as $patient){ ?>
         <ul>

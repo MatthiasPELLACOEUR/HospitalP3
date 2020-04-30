@@ -12,23 +12,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Liste des patients</title>
 </head>
 <body>
-    <h1>liste des patients</h1>
-    <a href="ajout-patient.php"> Ajouter un nouveau patient</a>
-    <?php foreach($patients as $patient){ ?>
-        <ul>
-            <li>numéro du patient : <?php echo($patient['id']) ?></li>
-            <li>nom du patient : <?=$patient['lastname']?></li>
-            <li>prénom du patient : <?=$patient['firstname']?></li>
-            <li><a href="profil-patient.php?id=<?=$patient['id']?>"> acceder au profil</a></li>
-        </ul>
+    <h1>Liste des patients</h1>
+    <a href="http://hospitalp3.test/index.php"> Index </a><br>
+    <a href="ajout-patient.php"> Ajouter un nouveau patient</a> <br>
+    <br>
+
+    <?php 
+    foreach($patients as $patient){ 
+        echo '<ul>
+            <li>numéro du patient : '.$patient['id'].' </li>
+            <li>nom du patient : '.$patient['lastname'].' </li>
+            <li>prénom du patient : '.$patient['firstname'].'</li>
+            <li><a href="profil-patient.php?id= '.$patient['id'].'"> accéder au profil</a></li>
+        </ul>';
+    }
         
-    <?php } ?>
+    ?>
         
 
-    <h3>Selection du Patient pour plus d'informations</h3>
+    <h3>Choisissez l'ID du Patient pour voir son profil :</h3>
     <form action="profil-patient.php" method="GET">
         <select name="id">
            <?php 
